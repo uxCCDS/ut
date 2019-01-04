@@ -10,7 +10,7 @@
 }
 
 *{margin: 0px; padding: 0px;font-family:'ciscosanslight','Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px;outline: none; }
-.bg{width: 1440px; height: 803px; margin: 0 auto; background: url('../img/bg.png') no-repeat center; position: relative;}
+.bg{width: 1440px; height: 803px; margin: 0 auto; background: url('../img/bg.png') no-repeat center; position: relative; background-size:contain;}
 .search_bg{width: 708px; height: 36px; position: absolute; top: 18px; left: 304px; border-radius: 18px; background: rgba(0,0,0,0.08)}
 .search_bg input{width: 676px; height: 36px; line-height: 36px; position: relative; text-indent: 130px; font-size: 16px; color:black; outline: none; border: none; background: none; margin-left: 16px;
 transition: text-indent .2s ease;}
