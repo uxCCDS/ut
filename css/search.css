@@ -18,5 +18,5 @@ transition: text-indent .2s ease;}
 .search_bg input+.icon_search{display: block; width: 16px; height:36px; background: url('../img/icon_search.svg') no-repeat center 9px; position: absolute; left: 124px; top:0px;
 transition: left .2s ease;}
 
-.search_bg input:focus { text-indent: 16px; transition: text-indent .2s ease;}
-.search_bg input:focus+.icon_search{ left: 10px; transition: left .2s ease;}
+.search_bg .onIpt{ text-indent: 16px; transition: text-indent .2s ease;}
+.search_bg .onIpt+.icon_search{ left: 10px; transition: left .2s ease;}
