@@ -16,9 +16,9 @@ i{font-style: normal;}
 
 .bg{width: 1440px; height: 803px; margin: 0 auto; background: url('../img/bg.png') no-repeat center; position: relative; background-size:contain;}
 .search_bg{width: 708px; height: 36px; position: absolute; top: 18px; left: 304px; border-radius: 18px; background: rgba(0,0,0,0.08)}
-.search_bg .iptSearch{width: 676px; height: 36px; line-height: 36px; position: relative; text-indent: 130px; font-size: 16px; color:black; outline: none; border: none; background: none; margin-left: 16px;
+.search_bg .iptSearch{width: 676px; height: 36px; line-height: 36px; position: relative; text-indent: 16px; font-size: 16px; color:black; outline: none; border: none; background: none; margin-left: 16px;
 transition: text-indent .2s ease;}
-.search_bg .iptSearch::placehold{font-size: 16px; color:#666;}
+.search_bg .iptSearch::placehold{font-size: 16px; color:#999;}
 .search_bg .icon_search{display: block; width: 16px; height:36px; background: url('../img/icon_search.svg') no-repeat center 9px; position: absolute; left: 124px; top:0px;
 transition: left .2s ease;}
 
