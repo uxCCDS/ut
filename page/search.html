@@ -12,13 +12,51 @@
 
 		<link rel="stylesheet" type="text/css" href="../css/search.css" />
 		<script type="text/javascript" src='../js/jquery-2.0.0.min.js'></script>
+		<script type="text/javascript" src='../js/association.js'></script>
 		<script type="text/javascript" src='../js/search.js'></script>
 	</head>
 	<body>
 		<div class='bg'>
 			<div class='search_bg' id='searchCon'>
-				<input id='iptSearch' type="text" class='hint' placeholder="Join a meeting or search meeting/recording/transcript…" /><i class='icon_search'></i>
+				<input id='iptSearch' class='iptSearch' type="text" class='hint' placeholder="Join a meeting or search meeting/recording/transcript…" /><i class='btnClose' id='btnClose'></i>
+				<i class='icon_search'></i>	
+				<div class='suggestion hide' id='suggestion_con'>
+					<div class='suggestion_block' id='suggestion_meetings'>
+						<h1>Meetings</h1>
+						<ul id='suggestion_meetings_ul'>
+							<li>
+								<h2>Webex download page review</h2>
+								<p>Catherine Sinu<i></i>09:00-10:00<i></i>Oct 15th<i></i>Thr<i>|</i>911 201 286</p>
+								<a class='btnJoin'>Join</a>
+							</li>
+						</ul>						
+					</div>
+					<div class='suggestion_block' id='suggestion_recordings'>
+						<h1>Recordings</h1>
+						<ul id='suggestion_recordings_ul'>
+							<li>
+								<h2>Webex download page review</h2>
+								<p>Catherine Sinu<i></i>09:00-10:00<i></i>Oct 15th<i></i>Thr<i>|</i>911 201 286</p>
+								<a class='btnPlay'></a>
+							</li>
+						</ul>						
+					</div>
+				</div>			
 			</div>
 		</div>
+		<textarea id='templateMeetings' class='hide'>
+			<li>
+				<h2>$title$</h2>
+				<p>$host$<i></i>$time$<i></i>Oct 15th<i></i>Thr<i>|</i>$no$</p>
+				<a class='btnJoin $class$'>Join</a>
+			</li>
+		</textarea>
+		<textarea id='templateRecordings' class='hide'>
+			<li>
+				<h2>$title$</h2>
+				<p>$host$<i></i>$time$<i></i>Oct 15th<i></i>Thr<i>|</i>$no$</p>
+				<a class='btnPlay'></a>
+			</li>
+		</textarea>
 	</body>
 </html>

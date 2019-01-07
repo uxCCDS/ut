@@ -1,8 +1,26 @@
 (function(){
 
+var _meetings='Webex download page review|911201286|Catherine Sinu|none|09:00-10:00,Webex New recording player design|911201289|Catherine Sinu|hide|10:00-11:00';
+
+var _recordings = 'Introduce Webex meeting recording|911201280|Catherine Sinu|none|07:00-08:00';
+
 var Search = function(){
 	this.Con = $('#searchCon');
 	this.Ipt = $('#iptSearch');
+	this.BtnClose = $('#btnClose');
+
+	this.SuggestionCon = $('#suggestion_con');
+	this.SuggestionMeetings = $('#suggestion_meetings');
+	this.SuggestionRecordings = $('#suggestion_recordings');
+	this.SuggestionMeetingsUl = $('#suggestion_meetings_ul');
+	this.SuggestionRecordingsUl = $('#suggestion_recordings_ul');
+
+	this.AssociationMeetings = new Association(_meetings,3);
+	this.AssociationRecordings = new Association(_recordings,3);
+
+	this.TemplateMeetings = $('#templateMeetings').val();
+	this.TemplateRecordings = $('#templateRecordings').val();
+
 	this.init();
 };
 Search.prototype={
@@ -14,17 +32,102 @@ Search.prototype={
 		this.Ipt.bind('blur',function(){
 			me.blur();
 		});
+		this.Ipt.bind('keyup',function(){
+			me.checkCloseBtnStatus();
+			me.checkSuggestion();
+
+		});
+		this.BtnClose.bind('click',function(){
+			me.clear();
+			me.BtnClose.css('display','none');
+		});
+	},
+	checkCloseBtnStatus:function(){
+		if(this.isIptEmpty()){
+			this.BtnClose.css('display','none');
+		}else{
+			this.BtnClose.css('display','block');
+		}
+	},
+	checkSuggestion:function(){
+		var _val = this.Ipt.val(),
+			hasMeeting,
+			hasRecordings;
+
+		//console.log(this.AssociationMeetings.getArr(_val));
+		hasMeeting = this.updateSuggestion(this.AssociationMeetings,_val,this.SuggestionMeetings,this.SuggestionMeetingsUl,this.TemplateMeetings);
+		hasRecordings = this.updateSuggestion(this.AssociationRecordings,_val,this.SuggestionRecordings,this.SuggestionRecordingsUl,this.TemplateRecordings);
+
+		if(hasMeeting && hasRecordings){
+			this.SuggestionCon.removeClass('hide');
+		}else{
+			this.SuggestionCon.addClass('hide');
+		}
+		
+	},
+	updateSuggestion:function(accoication,str,con,ul,template){
+		var _regResult = accoication.getArr(str),
+			_hasResult = (_regResult.length>0 && !this.isIptEmpty());
+
+		if(_hasResult){
+			con.removeClass('hide');
+			var _inner = [];
+			for(var i=0,l=_regResult.length;i<l;i++){
+				var _res = _regResult[i],
+					_title = this.filterText(str,_res[0]),
+					_no = this.filterText(str,_res[1],true),
+					_host = _res[2],
+					_class = _res[3],
+					_time = _res[4];
+
+				_inner.push(template.replace('$title$',_title).replace('$no$',_no).replace('$host$',_host).replace('$class$',_class).replace('$time$',_time));
+			}
+			ul.html(_inner.join(''));
+		}else{
+			con.addClass('hide');
+		}
+		return _hasResult;
+	},
+	filterText:function(key,str,ifNo){
+		var reg = new RegExp(key,'i');
+		var _ret = str.replace(reg,function(word){
+			return '<span>'+word+'</span>';
+		});
+
+		if(ifNo){
+			var i=0,
+				j=0,
+				l=_ret.length,
+				pos=[];
+			for(;i<l;i++){
+				if(/\d/.test(_ret[i])){
+					if(j==3 || j==6){
+						pos.push(i);
+					}
+					j++;
+				}
+			}
+			var _item = _ret.slice(pos[0],pos[1]);
+			_ret = _ret.replace(_item,' '+_item+' ');
+		}
+		return _ret;
+	},
+	clear:function(){
+		this.Ipt.val('');
+		this.checkCloseBtnStatus();
 	},
 	isIptEmpty:function(){
 		return this.Ipt.val().replace(/\r\n\s\t/g,'')==='';
 	},
 	focus:function(){
 		this.Ipt.addClass('onIpt');
+		this.checkSuggestion();
 	},
 	blur:function(){
 		if(this.isIptEmpty()){
 			this.Ipt.removeClass('onIpt');
 		}
+		this.SuggestionCon.addClass('hide');
 	}
 };
 
