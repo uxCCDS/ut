@@ -1,4 +1,7 @@
 *{margin:0px; padding: 0px;}
-.bg1{background:white url('../img/nonSignIn1.png') no-repeat center; width: 1440px; height: 122px; background-size: contain;position: fixed; top: 0px; left: 0px;}
-.bg2{background:white url('../img/nonSignIn2.png') no-repeat center; width: 1440px; height: 332px;background-size: contain ;position: fixed;;top: 122px; left: 0px;}
-.bg3{background:white url('../img/nonSignIn3.png') no-repeat center; width: 1440px; height: 1852px;background-size: contain; margin-top: 454px;}
+.bg1{background:white; width:100%; height:122px; position: fixed; top: 0px; left: 0px;}
+.bg1>div{background:url('../img/nonSignIn1.png') no-repeat center; width: 1440px; height: 122px; background-size: contain; margin: 0 auto;}
+.bg2{background:white; width:100%; height:332px; position: fixed; top: 122px; left: 0px;}
+.bg2>div{background:url('../img/nonSignIn2.png') no-repeat center; width: 1440px; height: 332px; background-size: contain; margin: 0 auto;}
+.bg3{background:white; width:100%; height:1852px; margin-top: 454px;}
+.bg3>div{background:url('../img/nonSignIn3.png') no-repeat center; width: 1440px; height: 1852px; background-size: contain; margin: 0 auto;}
