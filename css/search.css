@@ -35,6 +35,7 @@ transition: left .2s ease;}
 .suggestion_block li:hover{background: rgba(0,184,230,0.08); cursor: pointer;}
 .suggestion_block li::before{content: ''; height: 15px; display: block; width: 100%;}
 
+.suggestion_block .suggestion_noresult li:hover{background: white; cursor: pointer;}
 .suggestion_block .suggestion_noresult li::before{content: '';height: 0px;}
 .suggestion_block .suggestion_noresult li h3{text-align: center; font-size: 16px; color: black; line-height: 70px; height: 70px;}
 
