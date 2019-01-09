@@ -30,9 +30,14 @@ transition: left .2s ease;}
 .suggestion{position: absolute; top: 39px; left: 1px; width: 706px; border: 1px solid rgba(0,0,0,0.12); border-radius: 4px; box-shadow:0 4px 12px 0 rgba(0,0,0,0.16); z-index: 100; background: white;}
 
 .suggestion_block>h1{width:642px; margin-left: 32px; height: 42px; line-height: 42px; border-bottom: 1px solid rgba(0,0,0,0.12); font-size: 12px; color: black;}
+
 .suggestion_block li{width:642px; padding: 0 32px; height: 70px; position: relative; }
 .suggestion_block li:hover{background: rgba(0,184,230,0.08); cursor: pointer;}
 .suggestion_block li::before{content: ''; height: 15px; display: block; width: 100%;}
+
+.suggestion_block .suggestion_noresult li::before{content: '';height: 0px;}
+.suggestion_block .suggestion_noresult li h3{text-align: center; font-size: 16px; color: black; line-height: 70px; height: 70px;}
+
 .suggestion_block li h2{ height: 22px; line-height: 22px; color: black; font-size: 14px;}
 .suggestion_block li p{height: 18px; line-height: 18px; color: #999; font-size: 14px;}
 .suggestion_block li i{color:#e0e0e0; margin: 0 8px;}

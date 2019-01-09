@@ -14,6 +14,7 @@ var Search = function(){
 	this.SuggestionRecordings = $('#suggestion_recordings');
 	this.SuggestionMeetingsUl = $('#suggestion_meetings_ul');
 	this.SuggestionRecordingsUl = $('#suggestion_recordings_ul');
+	this.SuggestionNoResult= $('#suggestion_noresult');
 
 	this.AssociationMeetings = new Association(_meetings,3);
 	this.AssociationRecordings = new Association(_recordings,3);
@@ -58,12 +59,16 @@ Search.prototype={
 		hasMeeting = this.updateSuggestion(this.AssociationMeetings,_val,this.SuggestionMeetings,this.SuggestionMeetingsUl,this.TemplateMeetings);
 		hasRecordings = this.updateSuggestion(this.AssociationRecordings,_val,this.SuggestionRecordings,this.SuggestionRecordingsUl,this.TemplateRecordings);
 
-		if(hasMeeting && hasRecordings){
-			this.SuggestionCon.removeClass('hide');
-		}else{
+		if(this.isIptEmpty()){
 			this.SuggestionCon.addClass('hide');
+		}else{
+			this.SuggestionCon.removeClass('hide');
+			if(!hasMeeting && !hasRecordings){
+				this.SuggestionNoResult.removeClass('hide');
+			}else{
+				this.SuggestionNoResult.addClass('hide');
+			}
 		}
-		
 	},
 	updateSuggestion:function(accoication,str,con,ul,template){
 		var _regResult = accoication.getArr(str),
