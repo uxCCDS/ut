@@ -42,6 +42,9 @@ Search.prototype={
 			me.clear();
 			me.BtnClose.css('display','none');
 		});
+		this.SuggestionMeetings.bind('click',function(e){
+			
+		});
 	},
 	checkCloseBtnStatus:function(){
 		if(this.isIptEmpty()){
@@ -132,13 +135,23 @@ Search.prototype={
 		if(this.isIptEmpty()){
 			this.Ipt.removeClass('onIpt');
 		}
-		this.SuggestionCon.addClass('hide');
+		var me = this;
+		
+		setTimeout(function(){
+			me.SuggestionCon.addClass('hide');
+		},300);
+		
+		//this.SuggestionCon.addClass('hide');
 	}
 };
 
 $(function(){
 
 	new Search();
+
+	window.OpenClient = function(){
+		window.open("./client.html","","top=400,left=400,width=1280,height=722");
+	};
 
 });
 
