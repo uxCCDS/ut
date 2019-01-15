@@ -5,6 +5,7 @@ var _meetings='Webex download page review|911201286|Catherine Sinu|none|09:00-10
 var _recordings = 'Introduce Webex meeting recording|911201280|Catherine Sinu|none|07:00-08:00';
 
 var Search = function(){
+	this.Root = $('#root');
 	this.Con = $('#searchCon');
 	this.Ipt = $('#iptSearch');
 	this.BtnClose = $('#btnClose');
@@ -30,21 +31,55 @@ Search.prototype={
 		this.Ipt.bind('focus',function(){
 			me.focus();
 		});
-		this.Ipt.bind('blur',function(){
-			me.blur();
+
+		this.Ipt.bind('click',function(e){
+			e.stopPropagation();
 		});
+
 		this.Ipt.bind('keyup',function(){
 			me.checkCloseBtnStatus();
 			me.checkSuggestion();
 
 		});
-		this.BtnClose.bind('click',function(){
+		this.BtnClose.bind('click',function(e){
 			me.clear();
 			me.BtnClose.css('display','none');
+			e.stopPropagation();
 		});
+
+		$(window).bind('click',function(){
+			me.blur();
+		});
+
 		this.SuggestionMeetings.bind('click',function(e){
-			
+			me.getDom(e.target, me.SuggestionMeetings[0]);
+			//e.stopPropagation();
 		});
+	},
+	delegete:function(id){
+		switch(id){
+			case '1':
+				this.clear();
+				this.Root[0].className='bg2';
+				break;
+			case '2':
+				this.clear();
+				window.open("./client.html","","top=200,left=200,width=1280,height=722");
+				break;
+			default:
+				break;
+		}
+	},
+	getDom:function(dom,root){
+		var delegateId;
+		do{
+			delegateId = dom.getAttribute('delegateId');
+			if(delegateId!=null){
+				this.delegete(delegateId);
+				break;
+			}
+		}
+		while((dom = dom.offsetParent) && dom!=root);
 	},
 	checkCloseBtnStatus:function(){
 		if(this.isIptEmpty()){
@@ -135,13 +170,7 @@ Search.prototype={
 		if(this.isIptEmpty()){
 			this.Ipt.removeClass('onIpt');
 		}
-		var me = this;
-		
-		setTimeout(function(){
-			me.SuggestionCon.addClass('hide');
-		},300);
-		
-		//this.SuggestionCon.addClass('hide');
+		this.SuggestionCon.addClass('hide');
 	}
 };
 

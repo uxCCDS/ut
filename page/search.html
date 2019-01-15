@@ -16,7 +16,7 @@
 		<script type="text/javascript" src='../js/search.js'></script>
 	</head>
 	<body>
-		<div class='bg'>
+		<div class='bg' id='root'>
 			<div class='search_bg' id='searchCon'>
 				<input id='iptSearch' class='iptSearch' type="text" class='hint' placeholder="Join a meeting or search meeting/recording/transcript…" /><i class='btnClose' id='btnClose'></i>
 				<i class='icon_search'></i>	
@@ -50,10 +50,10 @@
 			</div>
 		</div>
 		<textarea id='templateMeetings' class='hide'>
-			<li>
+			<li delegateId ='1'>
 				<h2>$title$</h2>
 				<p>$host$<i></i>$time$<i></i>Oct 15th<i></i>Thr<i>|</i>$no$</p>
-				<a class='btnJoin $class$' href='./client.html' target="_blank">Join</a>
+				<a class='btnJoin $class$' delegateId='2' target="_blank">Join</a>
 			</li>
 		</textarea>
 		<textarea id='templateRecordings' class='hide'>
