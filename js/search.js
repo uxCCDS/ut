@@ -64,7 +64,7 @@ Search.prototype={
 				break;
 			case '2':
 				this.clear();
-				window.open("./client.html","","top=200,left=200,width=1280,height=722");
+				window.open("./client.html","","top=200,left=200,width=1283,height=700");
 				break;
 			default:
 				break;
