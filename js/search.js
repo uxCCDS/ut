@@ -182,6 +182,11 @@ $(function(){
 		window.open("./client.html","","top=400,left=400,width=1280,height=722");
 	};
 
+	$('#g_tip_a').bind('click',function(e){
+		$('#g_tip').css('display','none');
+		e.stopPropagation();
+	});
+
 });
 
 })();

@@ -29,6 +29,9 @@ transition: left .2s ease;}
 
 .search_bg .btnClose{display: none;width: 32px; height: 36px; background: url('../img/close.svg') no-repeat center; position: absolute; top: 0px; right: 0px; cursor: pointer;}
 
+
+.tip{position: absolute; top: 32px; left: 160px;}
+.tip a{display: block ; width:493px; height: 100px; position: absolute; bottom: 0px; left: 0px; cursor: pointer;}
 .suggestion{position: absolute; top: 39px; left: 1px; width: 706px; border: 1px solid rgba(0,0,0,0.12); border-radius: 4px; box-shadow:0 4px 12px 0 rgba(0,0,0,0.16); z-index: 100; background: white;}
 
 .suggestion_block>h1{width:642px; margin-left: 32px; height: 42px; line-height: 42px; border-bottom: 1px solid rgba(0,0,0,0.12); font-size: 12px; color: black;}
