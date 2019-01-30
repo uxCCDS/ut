@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>One Search</title>
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+		<meta name="mobileoptimized" content="0" >
+		<meta name="apple-mobile-web-app-capable" content="yes" >
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" type="text/css" href="../css/collab-ui-icons.css">
+		<link rel="stylesheet" type="text/css" href="../css/webex.css" />
+
+
+		<script type="text/javascript" src='../js/jquery-2.0.0.min.js'></script>
+		<script type="text/javascript" src='../js/association.js'></script>
+		<script type="text/javascript" src='../js/webex.js'></script>
+	</head>
+	<body>
+		<div class='bg' id='root'>
+			<nav class='nav'>
+				<a href='webex.html' class='current'><i class='icon icon-home-active_20'></i><span>Home</span></a>
+				<a href='meetings.html' ><i class='icon icon-meetings_20'></i><span>Meetings</span></a>
+				<a href='recordings.html' ><i class='icon icon-record_20'></i><span>Recordings</span></a>
+				<a href='preferences.html' ><i class='icon icon-settings_20'></i><span>Preferences</span></a>
+				<a href='insights.html' ><i class='icon icon-analysis_20'></i><span>Insights</span></a>
+				<a href='support.html' ><i class='icon icon-help-circle_20'></i><span>Support</span></a>
+				<a href='download.html' ><i class='icon icon-download_20'></i><span>Download</span></a>
+			</nav>
+			<div class='search_bg' id='searchCon'>
+				<div class='tip' id='g_tip'>
+					<img src='../img/tooltip.png' width="392"/>
+					<a id='g_tip_a'></a>
+				</div>				
+				<input id='iptSearch' class='iptSearch' type="text" class='hint' placeholder="Join a meeting or search meeting/recording/transcript…" /><i class='btnClose' id='btnClose'></i>
+				<i class='icon_search'></i>	
+				<div class='suggestion hide' id='suggestion_con'>
+					<div class='suggestion_block' id='suggestion_meetings'>
+						<h1>Meetings</h1>
+						<ul id='suggestion_meetings_ul'>
+							<li>
+								<h2>Webex download page review</h2>
+								<p>Catherine Sinu<i></i>09:00-10:00<i></i>Oct 15th<i></i>Thr<i>|</i>911 201 286</p>
+								<a class='btnJoin'>Join</a>
+							</li>
+						</ul>						
+					</div>
+					<div class='suggestion_block' id='suggestion_recordings'>
+						<h1>Recordings</h1>
+						<ul id='suggestion_recordings_ul'>
+							<li>
+								<h2>Webex download page review</h2>
+								<p>Catherine Sinu<i></i>09:00-10:00<i></i>Oct 15th<i></i>Thr<i>|</i>911 201 286</p>
+								<a class='btnPlay'></a>
+							</li>
+						</ul>						
+					</div>
+					<div class='suggestion_block' id='suggestion_noresult'>
+						<ul class='suggestion_noresult'>
+							<li><h3>No result</h3></li>
+						</ul>						
+					</div>
+				</div>			
+			</div>
+		</div>
+
+		<textarea id='templateMeetings' class='hide'>
+			<li delegateId ='1'>
+				<h2>$title$</h2>
+				<p>$host$<i></i>$time$<i></i>Oct 15th<i></i>Thr<i>|</i>$no$</p>
+				<a class='btnJoin $class$' delegateId='2' target="_blank">Join</a>
+			</li>
+		</textarea>
+		<textarea id='templateRecordings' class='hide'>
+			<li>
+				<h2>$title$</h2>
+				<p>$host$<i></i>$time$<i></i>Oct 15th<i></i>Thr<i>|</i>$no$</p>
+				<a class='btnPlay'></a>
+			</li>
+		</textarea>
+	</body>
+</html>

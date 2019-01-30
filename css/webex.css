@@ -123,8 +123,28 @@ a{text-decoration: none;}
 i{font-style: normal;}
 .hide{display: none !important;}
 
+.nav{display: block; width: 239px; background: #F5F5F5; list-style: none; position: absolute; top: 131px; left: 0px;}
+.nav a{display: block; width: 100%; height: 44px; line-height: 44px; text-indent: 44px; font-size: 16px; color:black; cursor: pointer; -webkit-user-select:none; }
+.nav a:hover{ background: #EBEBEB;}
+.nav .current{ color: #00B8E6;}
+.nav a *{text-indent: 0px;}
+.nav i{display: inline-block; width: 20px; height: 44px; line-height: 44px; vertical-align: top; }
+.nav span{display: inline-block; height: 44px; line-height: 44px; margin-left: 16px; vertical-align: top;}
+.nav .icon:before{position: absolute; top: 0px; left: 0px; width: 20px; }
+
 .bg{width: 1440px; height: 803px; margin: 0 auto; background: url('../img/bg.png') no-repeat center; position: relative; background-size:contain;}
 .bg2{width: 1440px; height: 803px; margin: 0 auto; background: url('../img/bg2.png') no-repeat center; position: relative; background-size:contain;}
+
+
+.bg_meetings{width: 1440px; height: 803px; margin: 0 auto; background: url('../img/bg_meetings.png') no-repeat center; position: relative; background-size:contain;}
+.bg_recordings{width: 1440px; height: 803px; margin: 0 auto; background: url('../img/bg_recordings.png') no-repeat center; position: relative; background-size:contain;}
+.bg_preferences{width: 1440px; height: 803px; margin: 0 auto; background: url('../img/bg_preferences.png') no-repeat center; position: relative; background-size:contain;}
+.bg_insights{width: 1440px; height: 803px; margin: 0 auto; background: url('../img/bg_insights.png') no-repeat center; position: relative; background-size:contain;}
+.bg_support{width: 1440px; height: 803px; margin: 0 auto; background: url('../img/bg_support.png') no-repeat center; position: relative; background-size:contain;}
+.bg_download{width: 1440px; height: 803px; margin: 0 auto; background: url('../img/bg_download.png') no-repeat center; position: relative; background-size:contain;}
+
+
+
 .search_bg{width: 708px; height: 36px; position: absolute; top: 18px; left: 304px; border-radius: 18px; background: rgba(0,0,0,0.08)}
 .search_bg .iptSearch{width: 676px; height: 36px; line-height: 36px; position: relative; text-indent: 16px; font-size: 16px; color:black; outline: none; border: none; background: none; margin-left: 16px;
 transition: text-indent .2s ease;}
