@@ -1,6 +1,7 @@
 *{margin:0px; padding: 0px;}
 .bg1{background:white; width:100%; height:122px; position: fixed; top: 0px; left: 0px;}
 .bg1>div{background:url('../img/nonSignIn1.png') no-repeat center; width: 1440px; height: 122px; background-size: contain; margin: 0 auto;}
+.bg1>div .signIn{display:block; position: absolute; bottom: 0px; right: 46px; width: 92px; height: 36px; cursor: pointer;}
 .bg2{background:white; width:100%; height:332px; position: fixed; top: 122px; left: 0px;}
 .bg2>div{background:url('../img/nonSignIn2.png') no-repeat center; width: 1440px; height: 332px; background-size: contain; margin: 0 auto;}
 .bg3{background:white; width:100%; height:1852px; margin-top: 454px;}
