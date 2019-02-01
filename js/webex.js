@@ -1,6 +1,6 @@
 (function(){
 
-var _meetings='Webex download page review|911201286|Catherine Sinu|none|09:00-10:00,Webex New recording player design|911201289|Catherine Sinu|hide|10:00-11:00';
+var _meetings='Sales Weekly Update|911201286|David Liam|none|08:00-09:00,Webex New recording player design|911201289|Catherine Sinu|hide|10:00-11:00';
 
 var _recordings = 'Introduce Webex meeting recording|911201280|Catherine Sinu|none|07:00-08:00';
 
@@ -64,7 +64,7 @@ Search.prototype={
 				break;
 			case '2':
 				this.clear();
-				window.open("./client.html","","top=200,left=200,width=1283,height=700");
+				window.open("./client.html","","top=200,left=200,width=1283,height=748");
 				break;
 			default:
 				break;
@@ -119,7 +119,7 @@ Search.prototype={
 				var _res = _regResult[i],
 					_title = this.filterText(str,_res[0]),
 					_no = this.filterText(str,_res[1],true),
-					_host = _res[2],
+					_host = this.filterText(str,_res[2],true),
 					_class = _res[3],
 					_time = _res[4];
 
@@ -179,7 +179,7 @@ $(function(){
 	new Search();
 
 	window.OpenClient = function(){
-		window.open("./client.html","","top=400,left=400,width=1280,height=722");
+		//window.open("./client.html","","top=400,left=400,width=1366,height=1868");
 	};
 
 	$('#g_tip_a').bind('click',function(e){
