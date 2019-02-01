@@ -23,6 +23,8 @@ var Search = function(){
 	this.TemplateMeetings = $('#templateMeetings').val();
 	this.TemplateRecordings = $('#templateRecordings').val();
 
+	this.HiddenBtn = $('#hiddenJoin');
+
 	this.init();
 };
 Search.prototype={
@@ -55,16 +57,21 @@ Search.prototype={
 			me.getDom(e.target, me.SuggestionMeetings[0]);
 			//e.stopPropagation();
 		});
+
+		this.HiddenBtn.bind('click',function(){
+			window.open("./client.html","","top=200,left=200,width=1366,height=748");
+		});
 	},
 	delegete:function(id){
 		switch(id){
 			case '1':
 				this.clear();
 				this.Root[0].className='bg2';
+				this.HiddenBtn.css('display','block');
 				break;
 			case '2':
 				this.clear();
-				window.open("./client.html","","top=200,left=200,width=1283,height=748");
+				window.open("./client.html","","top=200,left=200,width=1366,height=748");
 				break;
 			default:
 				break;

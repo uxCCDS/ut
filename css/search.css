@@ -123,6 +123,8 @@ a{text-decoration: none;}
 i{font-style: normal;}
 .hide{display: none !important;}
 
+.hiddenJoin{display: none; cursor: pointer; width: 200px; height: 40px; position: absolute; top: 267px; left: 304px;}
+
 .bg{width: 1440px; height: 803px; margin: 0 auto; background: url('../img/bg.png') no-repeat center; position: relative; background-size:contain;}
 .bg2{width: 1440px; height: 803px; margin: 0 auto; background: url('../img/bg2.png') no-repeat center; position: relative; background-size:contain;}
 .search_bg{width: 708px; height: 36px; position: absolute; top: 18px; left: 304px; border-radius: 18px; background: rgba(0,0,0,0.08)}
