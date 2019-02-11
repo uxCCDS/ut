@@ -1,9 +1,9 @@
 @font-face {
   font-family: "collab-ui-icons";
-  src: url("https://unpkg.com/@collab-ui/icons/fonts/collab-ui-icons.eot?693b93166e47571692f379b2620c40fb?#iefix") format("embedded-opentype"), 
-  url("https://unpkg.com/@collab-ui/icons/fonts/collab-ui-icons.woff2?693b93166e47571692f379b2620c40fb") format("woff2"), 
-  url("https://unpkg.com/@collab-ui/icons/fonts/collab-ui-icons.woff?693b93166e47571692f379b2620c40fb") format("woff"), 
-  url("https://unpkg.com/@collab-ui/icons/fonts/collab-ui-icons.ttf?693b93166e47571692f379b2620c40fb") format("truetype");
+  src: url("../font/collab-ui-icons.eot?693b93166e47571692f379b2620c40fb?#iefix") format("embedded-opentype"), 
+  url("../font/collab-ui-icons.woff2?693b93166e47571692f379b2620c40fb") format("woff2"), 
+  url("../font/collab-ui-icons.woff?693b93166e47571692f379b2620c40fb") format("woff"), 
+  url("../font/collab-ui-icons.ttf?693b93166e47571692f379b2620c40fb") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
